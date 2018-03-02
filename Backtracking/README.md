@@ -11,3 +11,15 @@ Else
   b. If the move chosen above doesn't lead to a solution, we can remove this move from the set and try other alternatives.
   c. If none of the alternatives work then we return false
 ```
+
+### Backtracking Algo for n-Queen Problem
+```
+1. Start in the leftmost corner
+2. If all queens are placed
+    return true
+3. Try all rows in the current column, then for each row:
+    a. If all queens can be placed safely in this row then mark this [row,col] as part of the solution and recursively check if placing a queen here leads to a solution.
+    b. If placing a queen in [row,col] leads to a solution, return true.
+    c. If placing a queen doesn't lead to a solution then unmark this [row,col]. Backtrack and go to step (a) to try other rows.
+4. If all rows have been tried and nothing worked, return false
+```

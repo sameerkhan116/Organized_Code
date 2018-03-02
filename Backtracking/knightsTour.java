@@ -1,16 +1,15 @@
 import java.util.Arrays;
 
 /*
-Complexity: O(8^(n*(n-1))) where n is the size of the board.
+Time Complexity: O(k^N) where N is the number of squares on the board and k is the dimension of board
 */
 
 class knightsTour {
   static int N = 8; // dimension of chessboard
 
-  
   // Function to solve the Knight's tour problem
   public static int[][] solveKT() {
-    int sol[][] = new int[8][8];
+    int sol[][] = new int[N][N];
     
     // initialize the sol array with values -1 everywhere
     for(int x = 0; x < N; x++) {
