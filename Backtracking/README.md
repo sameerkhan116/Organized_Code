@@ -2,7 +2,7 @@
 
 Backtracking is an algorithmic paradigm that tries all solution until it finds one that works. Unlike naive solution where all possible combinations are tried, backtracking works in an incremental way. We start with an empty set of items. When we add an item to the set, we check if it violates the current problem constraint. If it does then we remove the item and try other alternatives. If none of the items work then we go to the previous state and remove all the items added in this state. If we reach the initial state, we can say that no solution exists.
 
-### Backtracking Algo for Knight's tour
+### Algo for Knight's tour
 ```
 If all squares are visited
   print the solution
@@ -12,7 +12,7 @@ Else
   c. If none of the alternatives work then we return false
 ```
 
-### Backtracking Algo for n-Queen Problem
+### Algo for n-Queen Problem
 ```
 1. Start in the leftmost corner
 2. If all queens are placed
@@ -22,4 +22,15 @@ Else
     b. If placing a queen in [row,col] leads to a solution, return true.
     c. If placing a queen doesn't lead to a solution then unmark this [row,col]. Backtrack and go to step (a) to try other rows.
 4. If all rows have been tried and nothing worked, return false
+```
+
+### Algo for Rat in a maze problem
+```
+  If destination is reached
+    print the solution matrix
+  Else
+    a. Mark the current cell in the solution matrix as 1
+    b. Move forward in the horizontal direction and recursively check if it leads to a solution
+    c. If the above move doesn't lead to a solution, then move vertically and recurively check for solution.
+    d. If none of the moves work, return false
 ```
