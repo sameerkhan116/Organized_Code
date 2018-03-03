@@ -1,3 +1,7 @@
+/*
+  Time complexity: O(n)
+*/
+
 class reverseString {
   public static String reversed(String s) {
     int i = 0, j = s.length() - 1;

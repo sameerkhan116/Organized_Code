@@ -1,5 +1,7 @@
 import java.util.Arrays;
-
+/*
+  Time Complexity: O(n)
+*/
 class moveZeroes {
   public static int[] moved(int[] nums) {
     int x = 0;

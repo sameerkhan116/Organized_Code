@@ -1,5 +1,8 @@
 import java.util.Arrays;
-
+/*
+  Time Complexity: O(n)
+  Space Complexity: O(n)
+*/
 class prodExceptSelf {
   public static int[] prod(int[] nums) {
     if(nums == null || nums.length == 0) return nums;

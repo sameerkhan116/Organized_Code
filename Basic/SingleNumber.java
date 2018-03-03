@@ -1,3 +1,7 @@
+/*
+  Time Complexity: O(n)
+*/
+
 class SingleNumber {
   public static int single(int[] nums) {
     int curr = nums[0];

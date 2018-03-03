@@ -3,7 +3,7 @@
 Time Complexity :
 
 Average / Worst |
----------|
+:---------:|
 Access: O(log(n)) | 
 Search: O(log(n)) |
 Insertion: O(log(n)) |
