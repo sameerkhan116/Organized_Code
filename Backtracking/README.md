@@ -34,3 +34,13 @@ Else
     c. If the above move doesn't lead to a solution, then move vertically and recurively check for solution.
     d. If none of the moves work, return false
 ```
+
+### Algo for Permutation of a string
+```
+  If current index is equal to last index of string
+    print all permutations
+  Else
+    a. Loop from curr index to last index and swap characters at these indexes
+    b. recursively call the function with this stirng and curr index + 1
+    c. swap back to get the original index
+```
