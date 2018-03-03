@@ -3,7 +3,8 @@
 Backtracking is an algorithmic paradigm that tries all solution until it finds one that works. Unlike naive solution where all possible combinations are tried, backtracking works in an incremental way. We start with an empty set of items. When we add an item to the set, we check if it violates the current problem constraint. If it does then we remove the item and try other alternatives. If none of the items work then we go to the previous state and remove all the items added in this state. If we reach the initial state, we can say that no solution exists.
 
 ### Algo for Knight's tour
-```
+
+```pseudocode
 If all squares are visited
   print the solution
 Else 
@@ -13,7 +14,8 @@ Else
 ```
 
 ### Algo for n-Queen Problem
-```
+
+```pseudocode
 Start in the leftmost corner
 If all queens are placed
   return true
@@ -25,22 +27,36 @@ If all rows have been tried and nothing worked, return false
 ```
 
 ### Algo for Rat in a maze problem
-```
+
+```pseudocode
   If destination is reached
     print the solution matrix
   Else
     a. Mark the current cell in the solution matrix as 1
     b. Move forward in the horizontal direction and recursively check if it leads to a solution
-    c. If the above move doesn't lead to a solution, then move vertically and recurively check for solution.
+    c. If the above move doesn't lead to a solution, then move vertically and recursively check for solution.
     d. If none of the moves work, return false
 ```
 
 ### Algo for Permutation of a string
-```
+
+```pseudocode
   If current index is equal to last index of string
     print all permutations
   Else
     a. Loop from curr index to last index and swap characters at these indexes
-    b. recursively call the function with this stirng and curr index + 1
+    b. recursively call the function with this string and curr index + 1
     c. swap back to get the original index
+```
+
+### Algo for subset of a given integer array
+
+```pseudocode
+  Set start = 0
+  Add current temp list to main list (first empty subset)
+  Else
+    a. Loop from start to length of array
+    b. Add current (nums[i]) to temp list and recursively call from with start + 1
+    c. Remove the last element from the temp list
+
 ```
