@@ -32,20 +32,20 @@ class knightsTour {
   }
   
   // Helper function to check if we reach a solution using recursion
-  private static boolean solveUtil(int x, int y, int movei, int sol[][], int xMove[], int yMove[]) {
+  private static boolean solveUtil(int x, int y, int curMove, int sol[][], int xMove[], int yMove[]) {
     // if 64 moves are made (all possible places on the chessboard are covered), return true
-    if(movei == N * N) return true;
+    if(curMove == N * N) return true;
     
     // get next_x, next_y from the xMove and yMove array and check if they are safe
-    for(int k = 0; k < 8; k++) {
-      int next_x = x + xMove[k], next_y = y + yMove[k];
-      if(isSafe(next_x, next_y, sol)) {
+    for(int k = 0; k < N; k++) {
+      int a = x + xMove[k], b = y + yMove[k];
+      if(isSafe(a, b, sol)) {
         // if the move is safe, set the move to the move number (movei)
-        sol[next_x][next_y] = movei;
+        sol[a][b] = curMove;
         // recurively call function to check if all moves are made and return true if they are
-        if(solveUtil(next_x, next_y, movei + 1, sol, xMove, yMove)) return true;
+        if(solveUtil(a, b, curMove + 1, sol, xMove, yMove)) return true;
         // otherwise set current to -1 and continue
-        else sol[next_x][next_y] = -1;
+        else sol[a][b] = -1;
       }
     }
     return false;

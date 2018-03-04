@@ -35,6 +35,26 @@ class longestSpan {
     return maxLen;
   }
 
+  public static int spanner(int[] a, int[] b) {
+    int presum1 = 0, presum2 = 0;
+    int n = a.length, maxlen = 0;
+    int[] diff = new int[2*n-1];
+    Arrays.fill(diff, -1);
+    for(int i = 0; i < n; i++) {
+      presum1 += a[i];
+      presum2 += b[i];
+      int currdiff = presum1 - presum2;
+      int currIndex = n + currdiff;
+      if(currdiff == 0) maxlen = i + 1;
+      else if(diff[currIndex] == -1) diff[currIndex] = i;
+      else {
+        int len = i - diff[currIndex];
+        if(len > maxlen) maxlen = len;
+      }
+    }
+    return maxlen;
+  }
+
   public static void main(String[] args) {
     int[] arr1 = {0, 1, 0, 1, 1, 1, 1};
     int[] arr2 = {1, 1, 1, 1, 1, 0, 1};    

@@ -47,7 +47,7 @@ Spave Complexity: O(n)
 
 ```pseudocode
   Iterate over every element of arr2 starting from the end. For every element:
-    a) Store last element of arr[i] as last
+    a) Store last element of arr1 as last
     b) Loop from last element of arr1 while element arr1[j] is less than arr2[j]
       arr1[j + 1] = arr1[j]
       j--
