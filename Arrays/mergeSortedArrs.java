@@ -1,5 +1,7 @@
 import java.util.Arrays;
-
+/*
+  Time complexity: O(n)
+*/
 class mergeSortedArrs {
   public static int[] merge(int[] a, int[] b) {
     int x = a.length - 1, y = b.length - 1;

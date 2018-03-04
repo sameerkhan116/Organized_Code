@@ -58,5 +58,13 @@ If all rows have been tried and nothing worked, return false
     a. Loop from start to length of array
     b. Add current (nums[i]) to temp list and recursively call from with start + 1
     c. Remove the last element from the temp list
+```
+### Algo for balanced parentheses
 
+```pseudocode
+  If current string size is equal to given number of parentheses * 2 then add the string to result list and return
+  If open < number of parens
+    Recurively call (result list, str + "(", open + 1, close, number of parens)
+  If open < number of parens 
+    Recurively call (result list, str + ")", open, close + 1, number of parens)  
 ```
