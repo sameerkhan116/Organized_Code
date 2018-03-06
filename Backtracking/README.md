@@ -7,7 +7,7 @@ Backtracking is an algorithmic paradigm that tries all solution until it finds o
 ```pseudocode
 If all squares are visited
   print the solution
-Else 
+Else
   a. Add the solution to the visited set and recursively check if the move leads to a solution (A knight can make 8 moves and we can choose from one of the 8 moves in this step).
   b. If the move chosen above doesn't lead to a solution, we can remove this move from the set and try other alternatives.
   c. If none of the alternatives work then we return false
@@ -59,12 +59,13 @@ If all rows have been tried and nothing worked, return false
     b. Add current (nums[i]) to temp list and recursively call from with start + 1
     c. Remove the last element from the temp list
 ```
+
 ### Algo for balanced parentheses
 
 ```pseudocode
   If current string size is equal to given number of parentheses * 2 then add the string to result list and return
   If open < number of parens
     Recurively call (result list, str + "(", open + 1, close, number of parens)
-  If open < number of parens 
+  If open < number of parens
     Recurively call (result list, str + ")", open, close + 1, number of parens)  
 ```

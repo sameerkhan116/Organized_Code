@@ -1,11 +1,11 @@
 # Searching and Sorting Questions
 
-  Time Complexity | QuickSort | MergeSort | HeapSort | BubbleSort | InsertionSort | BucketSort
-:------:|:-------:|:--------:|:-------:|:--------:|:---------:|:--:|
-Best |  O(n log(n)) | O(n logn(n)) | O(n logn(n)) | O(n) | O(n) | O(n+k)
-Average | O(n log(n)) | O(n logn(n)) | O(n logn(n)) | O(n^2) | O(n) | O(n+k)
-Worst | O(n^2) | O(n logn(n)) | O(n logn(n)) | O(n^2) | O(n) | O(n^2)
-**Space Complexity** | O(log(n)) | O(n logn(n)) | O(1) | O(1) | O(1) | O(n)
+|   Time Complexity    |  QuickSort  |  MergeSort   |   HeapSort   | BubbleSort | InsertionSort | BucketSort |
+| :------------------: | :---------: | :----------: | :----------: | :--------: | :-----------: | :--------: |
+|         Best         | O(n log(n)) | O(n logn(n)) | O(n logn(n)) |    O(n)    |     O(n)      |   O(n+k)   |
+|       Average        | O(n log(n)) | O(n logn(n)) | O(n logn(n)) |   O(n^2)   |     O(n)      |   O(n+k)   |
+|        Worst         |   O(n^2)    | O(n logn(n)) | O(n logn(n)) |   O(n^2)   |     O(n)      |   O(n^2)   |
+| **Space Complexity** |  O(log(n))  | O(n logn(n)) |     O(1)     |    O(1)    |     O(1)      |    O(n)    |
 
 ### Algo for Top K Frequent Elements
 
