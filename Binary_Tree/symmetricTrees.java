@@ -1,3 +1,7 @@
+/*
+  Time complexity: O(n)
+*/
+
 class symmetricTrees {
   public static boolean Symmetric(TreeNode t1) {
     if (t1 == null)

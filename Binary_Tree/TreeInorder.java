@@ -1,5 +1,9 @@
 import java.util.*;
 
+/*
+  Time complexity: O(n)
+*/
+
 class TreeInorder {
   public static List<Integer> Inorder(TreeNode root) {
     List<Integer> res = new ArrayList<Integer>();

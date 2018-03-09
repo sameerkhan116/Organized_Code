@@ -37,3 +37,18 @@ Space Complexity: O(n)
   Else
     a) Return if they are symmetric at t1.left, t1.right recursively
 ```
+
+### Algo for converting a **sorted** array to BST
+
+```pseudocode
+  CreateTree by passing TreeNode root (= null initially), the array, l = starting index(0) and r = array.length to a helper function.
+  In the helper function:
+  If(l > r)
+    return root
+  Else
+    a) mid = l + (r-l) / 2
+    b) TreeNode head = new TreeNode(nums[m])
+    c) node.left = helper(node.left, nums, l, m);
+    d) node.right = helper(node.right, nums, m + 1, r);
+    Return node
+```

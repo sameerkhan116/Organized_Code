@@ -1,5 +1,9 @@
 import java.util.*;
 
+/*
+  Time complexity: O(n)
+*/
+
 class TreePostorder {
   public static List<Integer> Postorder(TreeNode root) {
     List<Integer> res = new ArrayList<Integer>();

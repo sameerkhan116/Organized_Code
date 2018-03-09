@@ -1,3 +1,7 @@
+/*
+  Time complexity: O(n)
+*/
+
 class mergeTwoTrees {
   public static TreeNode merged(TreeNode t1, TreeNode t2) {
     if (t1 == null)

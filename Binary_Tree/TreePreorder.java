@@ -1,5 +1,9 @@
 import java.util.*;
 
+/*
+  Time complexity: O(n)
+*/
+
 class TreePreorder {
   public static List<Integer> Preorder(TreeNode root) {
     List<Integer> res = new ArrayList<Integer>();
