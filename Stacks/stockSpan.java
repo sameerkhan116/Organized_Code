@@ -1,5 +1,8 @@
 import java.util.*;
 
+/*
+  Time complexity: O(n)
+*/
 class stockSpan {
   public static int[] stocks(int[] arr) {
     Stack<Integer> stack = new Stack<>();

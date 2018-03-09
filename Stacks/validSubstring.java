@@ -1,4 +1,7 @@
 import java.util.Stack;
+/*
+  Time Complexity: O(n)
+*/
 
 class validSubstring {
   public static int valid(String str) {

@@ -1,3 +1,7 @@
+/*
+  Time complexity for insertion and deletion: O(1)
+*/
+
 class stacksInArray {
   int size;
   int top1, top2;

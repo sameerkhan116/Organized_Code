@@ -1,5 +1,7 @@
 import java.util.*;
-
+/*
+  Time Complexity: O(n)
+*/
 class reverseStack {
   public static Stack<Integer> st = new Stack<>();
 
