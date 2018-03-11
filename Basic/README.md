@@ -59,3 +59,31 @@
   res.add(new interval(start, end))
   return res
 ```
+
+### Algo for ways to climb stairs with 1 or 2 step
+
+```pseudocode
+  If n <= 2
+    Return 2
+  Otherwise set allway = 0, oneway = 2, twoway = 1
+  Loop from 2 to number of stairs
+    allway is oneway + twoway
+    twoway = oneway
+    oneway = allway
+  Return allway
+```
+
+### Algo for sorting by colors 0,1,2
+
+```pseudocode
+  lo = 0, hi = arr.length - 1
+  loop over array from lo to high
+    If(arr[i] == 0)
+      swap arr[lo] and arr[i]
+      i++; lo++;
+    Else
+      swap arr[hi] and arr[i]
+      high--
+    Else i++
+  Return arr
+```
