@@ -27,6 +27,6 @@ class searchInRotated {
   }
 
   public static void main(String[] args) {
-    System.out.println(search(new int[] { 4, 5, 6, 1, 2, 3 }, 1));
+    System.out.println(s(new int[] { 4, 5, 6, 1, 2, 3 }, 1));
   }
 }

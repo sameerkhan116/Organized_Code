@@ -1,6 +1,6 @@
 # Stack Data Structure
 
-Some basic operations - push, pop, isEmpty, peek, poll.
+Follow LIFO. Some basic operations - push, pop, isEmpty, peek, poll.
 Access and search in stack takes O(n) whereas insertion and deletion can be done in O(1).
 
 Stacks can be implemented using arrays and linked lists.

@@ -17,3 +17,19 @@
     Map.Entry<> x = first element in priority queue and add the value of this to the results list.
   Return the list
 ```
+
+### Algo for searching in sorted array
+
+```pseudocode
+  Set l = 0 and r = arr.length
+  Loop over array while l <= r
+    mid = l + (r-l) / 2
+    if(arr[mid] == num) return mid
+    if(arr[l] < arr[mid]):
+      if(n <= arr[mid] && n >= arr[l]) r = m - 1;
+      else l = m + 1
+    Else
+      if(n >= arr[mid] && n <= arr[r]) l = m + 1;
+      else r = m - 1;
+  Else return -1 when the number is not found
+```

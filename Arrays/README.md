@@ -54,3 +54,44 @@ Spave Complexity: O(n)
       arr1[j + 1] = arr2[i]
       arr2[i] = last
 ```
+
+### Algo to check the minimum distance between two characters in an array
+
+```pseudocode
+  init min = 0
+  Loop over the array
+  If arr[i] == first char, min1 = i
+  If arr[i] == second char, min2 = i
+  if(min1 != -1 && min2 != -1)
+    int dist = Math.abs(min1 - min2)
+    if(dist == 0 || dist < min) min = dist
+  return min
+```
+
+### Algo for max size sub matrix with all 1
+
+```psuedocode
+  init an empty array (S) of the same size as given array
+  Add first row and col to S
+  for the remaining rows and cols:
+    if(nums[i][j] == 1) S[i][j] = Math.min(S[i][j-1], Math.min(S[i-1][j-1], S[i -1][j])) + 1;
+    else S[i][j] = 0
+  Init get maxs, maxi and maxj from S[i][j] by looping over all of its values
+  For(i = maxi; i > maxi - maxs; i--):
+    For(j = maxj; j > maxj - maxs; j--)
+      sysout(nums[i][j] + " ")
+    sysout();
+```
+
+### Algo for max element on the right
+
+```pseudocode
+  Set n = arr.length - 1
+  Set maxRight = nums[n]
+  nums[n] = -1, since there is no larger element to its right
+  Loop over array in reverse from second last element
+    temp = nums[i];
+    nums[i] = maxright;
+    if(temp > maxright) maxright = temp
+  return nums
+```

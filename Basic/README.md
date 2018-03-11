@@ -28,4 +28,34 @@
     a = a XOR b
     b = carry << 1
   return a
-```  
+```
+
+### Algo to check if two strings are anagrams
+
+```pseudocode
+  For both given strings, replace uppercase letters, spaces etc.
+  Use a map to keep count of each character.
+  Loop over first string and map each character occurence in hashmap.
+  Loop over second string and if:
+    map contains current char then substract the value of that character in the map
+    else return false
+  Loop over the map.values()
+  if one of them is not 0, return false
+  Otherwise return true
+```
+
+### Algo to merge overlapping intervals
+
+```pseudocode
+  Create a new list to store the result
+  List of intervals can be sorted as:
+    list.sort((i1, i2) -> Integers.compare(i1.start, i2.start))
+  Set start = intervals.get(0).start, end = intervals.get(0).end
+  Loop over all intervals
+    If(i.start >= end)
+      end = i.start
+    Else
+      start = i.start, end = i.end
+  res.add(new interval(start, end))
+  return res
+```
