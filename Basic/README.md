@@ -87,3 +87,11 @@
     Else i++
   Return arr
 ```
+
+### Algo for counting number of 1 bits
+
+```pseudocode
+  Loop from 0 to 32
+    count += num >> i & 1
+  return count
+```
