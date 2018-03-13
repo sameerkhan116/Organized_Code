@@ -95,3 +95,16 @@
     count += num >> i & 1
   return count
 ```
+
+### Algo for creating generating Pascals triangle for a given number
+
+```pseudocode
+  Create a List of List<Integer> to store each row
+  Create a list<integer> for row
+  Loop from 0 to the number
+    For each row add 1 at first position
+    Loop from 1 to size of row - 1
+      row.set(j, row.get(j) + row.get(j + 1))
+    Add this row as new arrayList to res
+  return res
+```
