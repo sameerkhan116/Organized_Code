@@ -95,3 +95,22 @@ Spave Complexity: O(n)
     if(temp > maxright) maxright = temp
   return nums
 ```
+
+### Algo for finding kthSmallestElement in sorted array
+
+```pseudocode
+  Set m = nums.length - 1, n = nums[0].length - 1
+  Set lo = 0, hi = nums[m][n] + 1
+  while(lo < hi)
+    mid = lo + (hi - lo) / 2
+    int count = 0, j = n
+    Loop from i = 0 to m
+      while j >= 0 && matrix[i][j] > mid
+        decrement j
+      count += j + 1
+    if count < required k
+      lo = mid + 1
+    else
+      hi = mid
+  Return lo
+```
