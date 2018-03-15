@@ -68,21 +68,6 @@ Spave Complexity: O(n)
   return min
 ```
 
-### Algo for max size sub matrix with all 1
-
-```psuedocode
-  init an empty array (S) of the same size as given array
-  Add first row and col to S
-  for the remaining rows and cols:
-    if(nums[i][j] == 1) S[i][j] = Math.min(S[i][j-1], Math.min(S[i-1][j-1], S[i -1][j])) + 1;
-    else S[i][j] = 0
-  Init get maxs, maxi and maxj from S[i][j] by looping over all of its values
-  For(i = maxi; i > maxi - maxs; i--):
-    For(j = maxj; j > maxj - maxs; j--)
-      sysout(nums[i][j] + " ")
-    sysout();
-```
-
 ### Algo for max element on the right
 
 ```pseudocode
@@ -113,4 +98,72 @@ Spave Complexity: O(n)
     else
       hi = mid
   Return lo
+```
+
+### Algo for teemo attacking (merge intervals)
+
+```pseudocode
+  Check if array is empty or duration of poisoning is 0 and return 0
+  Else init result, start = nums[0], end = nums[0] + duration
+  Loop over array from 1 to n
+    If nums[i] > end
+      Add end - start to result
+      start = nums[i]
+    end = nums[i] + n
+  result += end - start
+  return result
+```
+
+### Algo for min moves to equal two arrays
+
+```pseudocode
+  Check if array is valid, otherwise return 0
+  Init moves = 0, i = 0, j = nums.length - 1
+  Sort array
+  while(i < j)
+    moves += nums[j--] - nums[i++]
+  return moves
+```
+
+### Algo for calculating largest Pair sum in an array
+
+```pseudcode
+  Comapre first two elements of array
+  If first element > second, first = nums[0], second = nums[1] or vice versa
+  Loop over array from 2 to end
+    if(nums[i] > first)
+      second = first
+      first = nums[i]
+    if(nums[i] > second)
+      second = nums[i]
+  return new int[first, second]
+```
+
+### Algo for finding kth Smallest Element in Multi-dimensional Array
+
+```pseudocode
+  Let m -> matrix.length - 1, n -> matrix[0].length - 1
+  lo = matrix[0][0], hi = matrix[m][n] + 1
+  while lo < hi
+    mid = lo + hi / 2
+    count = 0, j = n
+    Loop from i to m
+      while j >= 0 and matrix[i][j] > mid
+        j--
+      count += j + 1
+    if count < k
+      lo = mid + 1
+    else hi = mid
+  return lo
+```
+
+### Algo for beautiful arrangement
+
+```pseudocode
+  Init empty array of required size
+  left = 1, right = n
+  for(int i = 0; i < n; i++)
+    res[i] = k % 2 != 0 ? left++ : right--;
+    if(k > 1) k--
+  return res
 ```

@@ -28,3 +28,32 @@ A given problems has Optimal Substructure Property if optimal solution of the gi
 
   Return arr[m][n]
 ```
+
+### Algo for max size sub matrix with all 1
+
+```psuedocode
+  init an empty array (S) of the same size as given array
+  Add first row and col to S
+  for the remaining rows and cols:
+    if(nums[i][j] == 1) S[i][j] = Math.min(S[i][j-1], Math.min(S[i-1][j-1], S[i -1][j])) + 1;
+    else S[i][j] = 0
+  Init get maxs, maxi and maxj from S[i][j] by looping over all of its values
+  For(i = maxi; i > maxi - maxs; i--):
+    For(j = maxj; j > maxj - maxs; j--)
+      sysout(nums[i][j] + " ")
+    sysout();
+```
+
+### Algo for finding unique paths in a maze (Standard DP Question)
+
+```pseudocode
+  Init new array of size m and n (m and n given as rows and columns)
+  For i from 0 to m
+    arr[i][0] = 1
+  For i from 0 to n
+    arr[0][i] = 1
+  For i from 1 to m
+    For i from 1 to n
+      arr[i][j] = arr[i - 1][j] + arr[i][j - 1]
+  return arr[m - 1][n - 1]
+```

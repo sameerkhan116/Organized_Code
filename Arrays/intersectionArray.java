@@ -1,5 +1,10 @@
 import java.util.*;
 
+/*
+  Time complexity: O(n)
+  Space Complexity: O(n)
+*/
+
 class intersectionArray {
   public static List<Integer> intersect(int[] arr1, int[] arr2) {
     List<Integer> list = new ArrayList<>();
