@@ -30,7 +30,35 @@ class letterCasePermutation {
 
   }
 
+  public static List<String> list(String s) {
+
+    List<String> res = new ArrayList<>();
+    if (s == null || s.length() == 0)
+      return res;
+    help(s, res, 0);
+    return res;
+  }
+
+  public static void help(String s, List<String> res, int pos) {
+    if (s.length() == pos) {
+      res.add(s);
+      return;
+    }
+
+    if (s.charAt(pos) >= '0' && s.charAt(pos) <= '9') {
+      helper(s, res, pos + 1);
+    }
+
+    char[] chs = s.toCharArray();
+
+    chs[pos] = Character.toUpperCase(chs[pos]);
+    helper(String.valueOf(chs), res, pos + 1);
+
+    chs[pos] = Character.toLowerCase(chs[pos]);
+    helper(String.valueOf(chs), res, pos + 1);
+  }
+
   public static void main(String[] args) {
-    System.out.println(perms("a1b2c3"));
+    System.out.println(list("a1b2c3"));
   }
 }

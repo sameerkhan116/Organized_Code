@@ -16,14 +16,15 @@ class permsOfString {
 
   public static void helper(List<String> res, int l, int r, String a) {
     // if current index is equal to last index, add string permutation to list
-    if(l == r) res.add(a);
+    if (l == r)
+      res.add(a);
     else {
       // otherwise loop from current index to last index of string
-      for(int i = l; i <= r; i++) {
+      for (int i = l; i <= r; i++) {
         // swap characters at current index and i in loop
         a = swap(a, l, i);
         // recursively call the helper function with incremented curr index
-        helper(res, l+1, r, a);
+        helper(res, l + 1, r, a);
         // swap curr index and i back again to get the same string (backtracking)
         a = swap(a, l, i);
       }
@@ -41,7 +42,22 @@ class permsOfString {
     return String.valueOf(x);
   }
 
+  public static List<String> subseq(String a) {
+    List<String> res = new ArrayList<>();
+    h(res, a, new StringBuilder(), 0);
+    return res;
+  }
+
+  public static void h(List<String> res, String a, StringBuilder x, int start) {
+    res.add(new String(x.toString()));
+    for (int i = start; i < a.length(); i++) {
+      x.append(a.charAt(i));
+      h(res, a, x, i + 1);
+      x.deleteCharAt(x.length() - 1);
+    }
+  }
+
   public static void main(String[] args) {
-    System.out.println(perms("ABCD"));
+    System.out.println(subseq("ABC"));
   }
 }
