@@ -21,19 +21,19 @@ class heapsort {
     }
   }
 
-  public static void heapify(int[] nums, int n, int i) {
+  public static void heapify(int[] arr, int n, int i) {
     int largest = i, l = 2 * i + 1, r = 2 * i + 2;
 
-    if (l < n && nums[l] > nums[largest])
+    if (l < n && arr[l] > arr[largest])
       largest = l;
-    if (r < n && nums[r] > nums[largest])
+    if (r < n && arr[r] > arr[largest])
       largest = r;
 
     if (largest != i) {
-      int temp = nums[i];
-      nums[i] = nums[largest];
-      nums[largest] = temp;
-      heapify(nums, n, largest);
+      int temp = arr[largest];
+      arr[largest] = arr[i];
+      arr[i] = temp;
+      heapify(arr, n, largest);
     }
   }
 
