@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Set;
 
 /*
@@ -15,7 +16,6 @@ class heapsort {
     for (int i = n - 1; i >= 0; i--) {
       int temp = nums[0];
       nums[0] = nums[i];
-      Set<Integer> set = new HashSet<Integer>();
       nums[i] = temp;
       heapify(nums, i, 0);
     }
