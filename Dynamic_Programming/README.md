@@ -11,24 +11,6 @@ Memoization (Top Down): The memoized program for a problem is similar to the rec
 
 A given problems has Optimal Substructure Property if optimal solution of the given problem can be obtained by using optimal solutions of its subproblems.
 
-### Algo for editDistance
-
-```pseudocode
-  Set m = s1.length, n = s2.length
-  Init new array arr[m + 1][n + 1]
-  Set first row and col equal to i and j respectively
-
-  For(int i = 0; i <= m; i++) arr[i][0] = i;
-  For(int i = 0; i <= n; i++) arr[0][i] = i;
-
-  For(int i = 1; i <= m; i++)
-    For(int j = 1; j <= n; j++)
-      int cost = s1.charAt(i - 1) == s2.charAt(i - 1) ? 0 : 1;
-      arr[i][j] = Math.min(arr[i-1][j] + 1, arr[i][j-1] + 1, arr[i-1][j-1] + cost);
-
-  Return arr[m][n]
-```
-
 ### Algo for max size sub matrix with all 1
 
 ```psuedocode
@@ -47,7 +29,7 @@ A given problems has Optimal Substructure Property if optimal solution of the gi
 ### Algo for finding unique paths in a maze (Standard DP Question)
 
 ```pseudocode
-  Init new array of size m and n (m and n given as rows and columns)
+  Init new array of size m and n
   For i from 0 to m
     arr[i][0] = 1
   For i from 0 to n
@@ -56,4 +38,28 @@ A given problems has Optimal Substructure Property if optimal solution of the gi
     For i from 1 to n
       arr[i][j] = arr[i - 1][j] + arr[i][j - 1]
   return arr[m - 1][n - 1]
+```
+
+### Algo for coin change problem
+
+```pseudocode
+  Create a table of size n + 1 where n is the required sum.
+  Set the first item of the table to 1.
+  Loop from i=1 to length of array of coins:
+    Loop from first coins[i] to required sum:
+      Set table[j] += table[j - coins[i]]
+  return table[n]
+```
+
+### Algo for rod cutting
+
+```pseudocode
+  Create a table of size[n + 1] where n is length of rod
+  Set table[0] to be [0]
+  Loop from i = 1 to n:
+    set max = least possible min
+    Loop j from 0 to i:
+      max = Maxof(p[j] - val[i-j-1], max);
+      val[i] = max;
+  return max
 ```

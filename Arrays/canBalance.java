@@ -1,18 +1,17 @@
 class canBalance {
   public static boolean balance(int[] nums) {
-    int a = 0, tot = 0, count = 0;
-
+    int totSum = 0, leftSum = 0;
     for (int i = 0; i < nums.length; i++) {
-      tot += nums[i];
+      totSum += nums[i];
     }
 
     for (int i = 0; i < nums.length; i++) {
-      if (a + nums[i] == tot - nums[i])
-        count++;
-      a += nums[i];
-      tot -= nums[i];
+      leftSum += nums[i];
+      totSum -= nums[i];
+      if (leftSum == totSum)
+        return true;
     }
-    return count > 0;
+    return false;
   }
 
   public static void main(String[] args) {
