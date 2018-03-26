@@ -1,5 +1,11 @@
 /*
-  Time complexity: O(n)
+  Time complexity: O(1) since 32 is constant
+
+  Explanation:
+  ------------
+  1. To count number of 1 bits, loop from 0 to 32.
+    • count += num >> i & 1
+  2. return count
 */
 
 class countOneBits {
@@ -22,6 +28,5 @@ class countOneBits {
 
   public static void main(String[] args) {
     System.out.println(countone(11));
-    System.out.println(hammingDistance(1, 4));
   }
 }

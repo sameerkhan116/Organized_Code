@@ -1,5 +1,11 @@
 /*
   Time Complexity: O(n)
+  
+  Explanation:
+  ------------
+  1. Go over each element fo the given string
+  2. Switch for value I, V, X, C, M and push corresponding int to arr.
+  3. If arr[i] < arr[i + 1] sum -= arr[i] else sum += arr[i]
 */
 
 import java.util.*;
@@ -41,6 +47,6 @@ class romanToInt {
   }
 
   public static void main(String[] args) {
-    System.out.println(romanToInt("DCXXI"));
+    System.out.println(rti("XCI"));
   }
 }

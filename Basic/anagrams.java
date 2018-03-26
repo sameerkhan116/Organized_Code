@@ -2,6 +2,15 @@ import java.util.*;
 
 /*
   Time complexity: O(n)
+  One solution -> Sort both strings and compare. O(n*log(n)) time
+
+  Main solution:
+  --------------
+  Ask if there are upper case or lower case letters, spaces etc
+  1. Check length of the strings, if they are not same, return false.
+  2. Otherwise start by mapping each char to a hashmap for first string.
+  3. Then go over second string and reduce count in map if value matches.
+  4. If at the end, each of the values is same, return true, otherwise return false
 */
 
 class anagrams {

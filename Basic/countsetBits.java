@@ -1,5 +1,15 @@
 import java.util.*;
 
+/* 
+  Time complexity: O(n) where n is difference between the two given numbers
+
+  Explanation:
+  ------------
+  1. Loop from low to high give number
+    • For each number, get count of ones
+    • if count of 1s is prime: res++
+  2. return res
+*/
 class countsetBits {
   public static int count(int L, int R) {
     int count = 0;

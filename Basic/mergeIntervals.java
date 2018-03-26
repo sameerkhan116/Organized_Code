@@ -1,6 +1,15 @@
 import java.util.*;
 /*
   Time Complexity: O(n)
+
+  Explanation:
+  -----------
+  1. Set start = i1.get(0).start, end = i1.get(0).end
+  2. Loop over intervals: interval i1 : intervals 
+    • If i1.start <= end: end = Math.max(end, i1.end)
+    • else res.add(new Interval(start, end)), start = i1.start, end = i1.end
+  3. res.add(new Interval(start, end))
+  4. return res
 */
 
 class mergeIntervals {
