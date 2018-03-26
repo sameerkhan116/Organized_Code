@@ -1,5 +1,8 @@
 import java.util.*;
 
+/* 
+  Time complexity: O(n)
+*/
 class nextGreater {
   public static int[] next(int[] findNums, int[] nums) {
     Stack<Integer> st = new Stack<>();

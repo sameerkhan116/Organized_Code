@@ -1,5 +1,6 @@
-import java.util.Arrays;
-
+/* 
+  Time complexity: O(n*n)
+*/
 class longestIncSubseq {
   public static int max(int[] nums) {
     int max = 0, n = nums.length;

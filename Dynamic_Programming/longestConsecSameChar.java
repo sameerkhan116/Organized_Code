@@ -1,3 +1,7 @@
+/* 
+  Time complexity: O(n)
+*/
+
 class longestConsecSameChar {
   public static int max(String a) {
     char maxChar = a.charAt(0), prevChar = a.charAt(0);

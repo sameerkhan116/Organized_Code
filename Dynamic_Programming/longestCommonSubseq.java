@@ -11,7 +11,7 @@ class longestCommonSubseq {
     for(int i = 0; i <= m; i++){
       for(int j = 0; j <= n; j++) {
         if(i == 0 || j == 0) arr[i][j] = 0;
-        else if(X[i - 1] == Y [j - 1]) arr[i][j] = 1 + arr[i- 1][j - 1];
+        else if(X[i - 1] == Y [j - 1]) arr[i][j] = 1 + arr[i - 1][j - 1];
         else arr[i][j] = Math.max(arr[i-1][j], arr[i][j - 1]); 
       }
     }

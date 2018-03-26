@@ -1,5 +1,9 @@
 import java.util.*;
 
+/* 
+  Time complexity: O(n)
+*/
+
 class dailyTemps {
   public static int[] daily(int[] temp) {
     int m = temp.length - 1, days = 0;

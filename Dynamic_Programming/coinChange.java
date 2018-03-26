@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 /* 
-  Time Complexity: O(mn)
+  Time Complexity: O(mn) where n is the sum and m is the size of the array
   Space Complexity: O(n)
 */
 class coinChange {

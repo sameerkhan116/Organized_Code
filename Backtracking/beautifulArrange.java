@@ -1,3 +1,7 @@
+/* 
+  Time complexity: O(k) where k is the number of accepted permutations
+*/
+
 class beautifulArrange {
   static int count = 0;
 
