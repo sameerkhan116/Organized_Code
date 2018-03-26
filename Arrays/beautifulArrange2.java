@@ -2,6 +2,15 @@ import java.util.Arrays;
 
 /*
   Time complexity: O(n)
+
+  Explanation:
+  ------------
+  1. Create an array to store the list of size equal to given number
+  2. Set l = 1, r = given number (n)
+  3. Loop from 0 to n
+    • If (k % 2) != 0 l++ else r--;
+    • If (k > 1) k--;
+  4. Return res 
 */
 
 class beautifulArrange2 {

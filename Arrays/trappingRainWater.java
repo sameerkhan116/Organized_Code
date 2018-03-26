@@ -1,6 +1,15 @@
 /* 
   Time Complexity: O(n)
   Space complexity: O(1)
+
+  Explanation:
+  ------------
+  1. We start by setting the left and right to each end of the array. l = 0, r = n - 1
+  2. Also set l 
+  3. Loop while l < r:
+    • If(A[l] <= A[r]): if(A[l] >= maxL) maxL = A[l],  else res += maxL - A[l]
+    • else: if(A[r] >= maxR) maxR = A[r],  else res += maxR - A[r]
+  4. Return res
 */
 
 class trappingRainWater {
@@ -23,7 +32,6 @@ class trappingRainWater {
           res += maxR - A[r];
         r--;
       }
-      System.out.println("l: " + l + ", r: " + r + ", res: " + res);
     }
     return res;
   }

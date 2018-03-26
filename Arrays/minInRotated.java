@@ -1,15 +1,22 @@
 /*
   Time complexity: O(n)
+
+  Explanation:
+  ------------
+  1. l = 0, r = arr.length - 1
+  2. while l < r
+    • calc mid  
+    • if arr[mid] >= arr[r] l = mid + 1
+    • else r = mid
+  3. return l
 */
 
 class minInRotated {
-  public static int min(int[] nums) {
+  public static int minR(int[] nums) {
     int l = 0, r = nums.length - 1;
     while (l < r) {
-      if (nums[l] < nums[r])
-        return nums[l];
       int m = l + (r - l) / 2;
-      if (nums[m] > nums[r])
+      if (nums[m] >= nums[r])
         l = m + 1;
       else
         r = m;
@@ -18,6 +25,6 @@ class minInRotated {
   }
 
   public static void main(String[] args) {
-    System.out.println(min(new int[] { 4, 5, 6, 1, 2, 3 }));
+    System.out.println(minR(new int[] { 4, 5, 6, 1, 2, 3 }));
   }
 }

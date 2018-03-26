@@ -3,6 +3,12 @@ import java.util.*;
 /*
   Time complexity: O(n)
   Space Complexity: O(n)
+
+  Explanation:
+  ------------
+  1. Loop over all elements of the first list and add them to a map.
+  2. Loop over all elements of the second list and if map contains that element, add it to list.
+  (may need to check for duplicates)
 */
 
 class intersectionArray {

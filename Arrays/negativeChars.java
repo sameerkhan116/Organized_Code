@@ -3,13 +3,13 @@
 */
 
 class negativeChars {
-  public static int count(int[][] M) {
+  public static int c(int[][] M) {
+    int m = M.length, n = M[0].length;
     int count = 0;
-    int m = M[0].length, n = M.length;
-    int i = 0, j = m - 1;
+    int i = 0, j = n - 1;
     while (j >= 0 && i < n) {
       if (M[i][j] < 0) {
-        count += (j + 1);
+        count += j + 1;
         i++;
       } else
         j--;
@@ -18,6 +18,6 @@ class negativeChars {
   }
 
   public static void main(String[] args) {
-    System.out.println(count(new int[][] { { -3, -2, -1, 1 }, { -2, 2, 3, 4 }, { 4, 5, 7, 8 } }));
+    System.out.println(c(new int[][] { { -3, -2, -1, 1 }, { -2, 2, 3, 4 }, { 4, 5, 7, 8 } }));
   }
 }

@@ -1,6 +1,14 @@
 
 /*
   Time complexity: O(n)
+
+  (Similar to the meeting points problem)
+  Explanation:
+  ------------
+  1. sum = 0, l = 0, r = nums.length -1 
+  2. While l < r:
+    • sum += nums[r--] - nums[l++];
+  3. return sum
 */
 
 import java.util.*;

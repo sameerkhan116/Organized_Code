@@ -1,5 +1,21 @@
 /*
-  Time complexity: O(m*m*n)
+  Time complexity: O(n*log(n)*n)
+  Further optimization: O(n*log(m))
+  
+  Explanation:
+  ------------
+  1. Get m = matrix.length - 1 and n = matrix[0].length - 1.
+  2. lo = first element of matrix, hi = last element of matrix + 1
+  3. While lo < hi:
+    • mid = lo + (hi - lo) / 2
+    • count = 0, j = n
+    • Loop from i = 0 to m inclusive:
+      º Find the count of smaller elements
+      º while(j >= 0 && matrix[i][j]) j--;
+      º count += j + 1
+    • if(count < k) lo = mid + 1
+    • else hi = mid
+  4. Return lo
 */
 
 class kthSmallestInSorted {
@@ -9,7 +25,7 @@ class kthSmallestInSorted {
     while (lo < hi) {
       int mid = lo + (hi - lo) / 2;
       int count = 0, j = n;
-      for (int i = 0; i <= m; i++) {
+      for (int i = 0; i <= m; i++) {    
         while (j >= 0 && matrix[i][j] > mid)
           j--;
         count += j + 1;
