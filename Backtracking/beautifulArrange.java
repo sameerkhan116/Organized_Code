@@ -1,5 +1,10 @@
 /* 
   Time complexity: O(k) where k is the number of accepted permutations
+  
+  Explanation:
+  ------------
+  1. Check every possible number in every possible location that satisifies the given relation.
+  2. If it does, increment count, mark that number used and increment pos.
 */
 
 class beautifulArrange {
@@ -8,33 +13,23 @@ class beautifulArrange {
   public static int arrange(int N) {
     if (N == 0)
       return 0;
-    int[] nums = new int[N + 1];
-    for (int i = 0; i <= N; i++) {
-      nums[i] = i;
-    }
-    helper(nums, N);
+    helper(N, 1, new int[N + 1]);
     return count;
   }
 
-  public static void helper(int[] nums, int start) {
-    if (start == 0) {
+  public static void helper(int N, int pos, int[] used) {
+    if (pos > N) {
       count++;
       return;
     }
 
-    for (int i = start; i > 0; i--) {
-      swap(nums, start, i);
-      if (nums[start] % start == 0 || start % nums[start] == 0)
-        helper(nums, start - 1);
-      swap(nums, i, start);
+    for (int i = 1; i <= N; i++) {
+      if (used[i] == 0 && i % pos == 0 || pos % i == 0) {
+        used[i] = 1;
+        helper(N, pos + 1, used);
+        used[i] = 0;
+      }
     }
-
-  }
-
-  public static void swap(int[] arr, int i, int j) {
-    int temp = arr[i];
-    arr[i] = arr[j];
-    arr[j] = temp;
   }
 
   public static void main(String[] args) {

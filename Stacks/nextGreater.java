@@ -2,6 +2,17 @@ import java.util.*;
 
 /* 
   Time complexity: O(n)
+
+  Explanation:
+  ------------
+  1. Create a stack to store values from b and Map to map those values.
+  2. Loop over all values of b
+    • while(!st.isEmpty() && b[i] > st.peek())
+      map.put(st.pop(), b[i])
+    • st.push(b[i])
+  3. Loop over all values of a
+    • res[i] = map.getOrDefault(a[i], -1);
+  4. return res
 */
 class nextGreater {
   public static int[] next(int[] findNums, int[] nums) {

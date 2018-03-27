@@ -1,3 +1,15 @@
+/* 
+  Time complexity: O(n)
+
+  Explanation:
+  ------------
+  ... if either is null, return the other
+  1. Create a new Listnode merged
+  2. If l1.val < l2.val, merged = l1, merged.next = merge(l1.next, l2)
+  3. Else merged = l2, merged.next = merge(l1, l2.next)
+  4. return merged
+*/
+
 class mergeSortedLL {
   public ListNode merge(ListNode l1, ListNode l2) {
     if (l1 == null)
@@ -15,4 +27,3 @@ class mergeSortedLL {
     }
     return merged;
   }
-}

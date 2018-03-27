@@ -42,22 +42,8 @@ class permsOfString {
     return String.valueOf(x);
   }
 
-  public static List<String> subseq(String a) {
-    List<String> res = new ArrayList<>();
-    h(res, a, new StringBuilder(), 0);
-    return res;
-  }
-
-  public static void h(List<String> res, String a, StringBuilder x, int start) {
-    res.add(new String(x.toString()));
-    for (int i = start; i < a.length(); i++) {
-      x.append(a.charAt(i));
-      h(res, a, x, i + 1);
-      x.deleteCharAt(x.length() - 1);
-    }
-  }
-
   public static void main(String[] args) {
-    System.out.println(subseq("ABC"));
+    System.out.println(perms("ABC"));
+    System.out.println(p("ABC"));
   }
 }

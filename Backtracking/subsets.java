@@ -13,7 +13,7 @@ class subsets {
 
   public static void helper(List<List<Integer>> res, int[] nums, List<Integer> cur, int start) {
     res.add(new ArrayList<>(cur));
-    for(int i = start; i < nums.length; i++) {
+    for (int i = start; i < nums.length; i++) {
       cur.add(nums[i]);
       helper(res, nums, cur, i + 1);
       cur.remove(cur.size() - 1);
@@ -21,6 +21,7 @@ class subsets {
   }
 
   public static void main(String[] args) {
-    System.out.println(subs(new int[]{1,2,3}));
+    System.out.println(subs(new int[] { 1, 2, 3 }));
+    System.out.println(s(new int[] { 1, 2, 3 }));
   }
 }

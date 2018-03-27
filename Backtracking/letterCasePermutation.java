@@ -1,5 +1,15 @@
 import java.util.*;
 
+/* 
+  Explanation:
+  ------------
+  1. Backtrackin on the given string.
+  2. If pos == string.length, res.add(s)
+  3. if given char is between 0 and 9 backtrack with pos + 1
+  4. Otherwise, change string to char array.
+  5. change char at current pos to uppercase and pass this string to backtrackign function
+  6. Change char to loewr case and pass this to backtracking function.
+*/
 class letterCasePermutation {
   public static List<String> perms(String s) {
     List<String> res = new ArrayList<>();

@@ -2,6 +2,16 @@ import java.util.*;
 
 /*
   Time complexity: O(n)
+  
+  Explanation:
+  ------------
+  1. Create a stack and a res array of equal size as given nums
+  2. Loop over given array
+    • while(!st.isEmpty() && nums[i] >= nums[st.peek()])
+      st.pop()
+    • res[i] = (if st is empty, then it is greater than all elements on the left -> i + 1 else, i - st.peek())
+    • st.push(i);
+  3. return res
 */
 class stockSpan {
   public static int[] stocks(int[] arr) {
@@ -20,6 +30,6 @@ class stockSpan {
   }
 
   public static void main(String[] args) {
-    System.out.println(Arrays.toString(stocks(new int[] { 100, 80, 60, 70, 60, 75, 85 })));
+    System.out.println(Arrays.toString(s(new int[] { 100, 80, 60, 70, 60, 75, 85 })));
   }
 }

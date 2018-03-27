@@ -1,6 +1,13 @@
 import java.util.*;
 /*
   Time complexity: O(n)
+
+  Explanation:
+  1. Read string character wise
+  2. While CharacterIsDigit, keep adding to stack
+  3. if character is operation: a = stack.pop(), b = stack.pop()
+  4. stack.push a (operation) b
+  5. return stack.pop()
 */
 
 class evalPostfix {
