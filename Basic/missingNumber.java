@@ -1,5 +1,10 @@
 /*
   Time complexity: O(n)
+
+  Explanation:
+  ------------
+  1. Get total sum using (n*n + n) / 2
+  2. Loop over array and subtract from sum, remaining is what we are missing
 */
 
 class missingNumber {

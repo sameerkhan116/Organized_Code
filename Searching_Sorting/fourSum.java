@@ -1,6 +1,14 @@
 
 /*
   Time complxity: O(n^2)
+
+  Explanation:
+  ------------
+  1. Go over the given four arrays 2 at time.
+  2. Put the corresponding values in a map, along with a count of how many times that value occurs.
+  3. Loop over the remaining two arrays and set sum = -(C[i] + D[j])
+  4. Check the map if it contains that sum value, if it does, add the value from map to count
+  5. return count
 */
 
 import java.util.HashMap;

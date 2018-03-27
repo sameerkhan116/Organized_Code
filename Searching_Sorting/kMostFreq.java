@@ -2,6 +2,15 @@ import java.util.*;
 import java.util.Map.Entry;
 /*
   Time Complexity: O(n)
+
+  Explanation:
+  ------------
+  1. Create a list in which we will add the topKFreq, a map to map each of the values in the array and a priority queue to sort the hashmap.
+  2. Map each value in the array to map
+  3. Sort the map using priorityQueue
+  4. While res.size() < k required, add map.entry from polling priority queue to it.
+  5. Return res
+
 */
 
 class kMostFreq {

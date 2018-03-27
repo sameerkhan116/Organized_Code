@@ -1,3 +1,4 @@
+
 /*
   Time complexity: O(n log(n)) -> Best case, O(n*n) -> worst case
 */
@@ -11,7 +12,7 @@ class quickSort {
   }
 
   public static void s(int[] nums, int l, int r) {
-    if(l < r) {
+    if (l < r) {
       int pi = p(nums, l, r);
       s(nums, l, pi - 1);
       s(nums, pi + 1, r);
@@ -21,8 +22,8 @@ class quickSort {
   public static int p(int[] nums, int l, int r) {
     int i = l - 1;
     int pivot = nums[r];
-    for(int j = l; j < r; j++) {
-      if(nums[j] <= pivot) {
+    for (int j = l; j < r; j++) {
+      if (nums[j] <= pivot) {
         i++;
         int temp = nums[i];
         nums[i] = nums[j];
@@ -36,6 +37,6 @@ class quickSort {
   }
 
   public static void main(String[] args) {
-    System.out.println(Arrays.toString(quick(new int[]{2,5,2,1,6,2,4,5})));
+    System.out.println(Arrays.toString(qs(new int[] { 2, 5, 2, 1, 6, 2, 4, 5 })));
   }
 }

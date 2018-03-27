@@ -1,6 +1,15 @@
 import java.util.Arrays;
 /*
   Time complexity: O(m + n) for m x n matrix
+
+  Explanation:
+  ------------
+  1. Set i = 0, j = arr.length - 1
+  2. Loop while i < arr.length && j >= 0
+    • if(nums[i][j] == 0) return i and j
+    • if(nums[i][j] < n) i++
+    • else j--
+  3. return null
 */
 
 class searchInMArray {

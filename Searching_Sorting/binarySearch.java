@@ -1,3 +1,7 @@
+
+/* 
+  Time Complexity: O(log(n))
+*/
 class binarySearch {
   public static int BS(int[] nums, int n) {
     int l = 0, r = nums.length - 1;
