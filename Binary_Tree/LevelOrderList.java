@@ -22,7 +22,7 @@ class LevelOrderList {
     List<Integer> cur = res.get(b);
     cur.add(root.val);
 
-    helper(res.root.left, b + 1);
-    helper(res.root.right, b + 1);
+    helper(res, root.left, b + 1);
+    helper(res, root.right, b + 1);
   }
 }

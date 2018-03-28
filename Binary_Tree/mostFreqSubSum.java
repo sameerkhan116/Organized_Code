@@ -1,14 +1,11 @@
 import java.util.*;
 
 class mostFreqSubSum {
-  Map<Integer, Integer> map;
-  int maxCount;
 
   public List<Integer> maximum(TreeNode root) {
-    maxCount = 0;
-    map = new HashMap<>();
-
-    helper(root);
+    int maxCount = 0;
+    Map<Integer, Integer> map = new HashMap<>();
+    helper(root, map, maxCount);
 
     List<Integer> res = new ArrayList<>();
 
@@ -20,12 +17,12 @@ class mostFreqSubSum {
     return res;
   }
 
-  public int helper(TreeNode root) {
+  public int helper(TreeNode root, Map<Integer, Integer> map, int maxCount) {
     if (root == null)
       return 0;
 
-    int left = helper(root.left);
-    int right = helper(root.right);
+    int left = helper(root.left, map, maxCount);
+    int right = helper(root.right, map, maxCount);
     int sum = left + right + root.val;
 
     int count = map.getOrDefault(sum, 0) + 1;

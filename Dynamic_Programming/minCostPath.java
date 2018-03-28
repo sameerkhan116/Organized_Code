@@ -27,6 +27,6 @@ class minCostPath {
   }
 
   public static void main(String[] args) {
-    System.out.println(m(new int[][] { { 1, 2, 3 }, { 4, 8, 2 }, { 1, 5, 3 } }));
+    System.out.println(min(new int[][] { { 1, 2, 3 }, { 4, 8, 2 }, { 1, 5, 3 } }));
   }
 }

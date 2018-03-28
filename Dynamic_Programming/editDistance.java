@@ -22,7 +22,7 @@ class editDistance {
   }
 
   public static void main(String[] args) {
-    System.out.println(ed("sea", "eat"));
-    System.out.println(ed("sunday", "saturday"));
+    System.out.println(edit("sea", "eat"));
+    System.out.println(edit("sunday", "saturday"));
   }
 }

@@ -16,6 +16,6 @@ class ArrayToBST {
       node.right = createTree(node.right, nums, m + 1, r);
       return node;
     }
-    return root;
+    return null;
   }
 }
