@@ -12,6 +12,7 @@ class longestIncSubseq {
 
     for (int i = 1; i < n; i++) {
       for (int j = 0; j < i; j++) {
+        System.out.println(nums[i] + " " + nums[j] + " " + arr[i] + " " + arr[j]);
         if (nums[i] > nums[j] && arr[i] < arr[j] + 1) {
           arr[i] = arr[j] + 1;
         }
