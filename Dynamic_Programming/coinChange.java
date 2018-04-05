@@ -20,9 +20,9 @@ class coinChange {
 
     table[0] = 1;
 
-    for (int i = 0; i < m; i++) {
-      for (int j = coins[i]; j <= n; j++) {
-        table[j] += table[j - coins[i]];
+    for (int coin : coins) {
+      for (int j = coin; j <= n; j++) {
+        table[j] += table[j - coin];
         System.out.println(Arrays.toString(table));
       }
     }
