@@ -1,29 +1,34 @@
 import java.util.*;
 
 class practice {
-  public static int LPS(String a) {
-    int n = a.length();
-    char[] str = a.toCharArray();
-    int[][] table = new int[n][n];
-
-    for(int i = 0; i < n; i++) {
-      table[i][i] = 1;
-    }
-
-    for(int l = 2; l <= n; l++){
-      for(int i = 0; i <= n - l; i++) {
-        int j = i + l - 1;
-        if(l == 2 && str[i] == str[j]) table[i][j] = 2;
-        else if(str[i] == str[j]) table[i][j] = 2 + table[i + 1][j - 1];
-        else table[i][j] = Math.max(table[i + 1][j], table[i][j - 1]);
-      }
-    }
-
-    System.out.println(Arrays.deepToString(table));
-    return table[0][n - 1];
+  public static Set<String> permute(String a) {
+    Set<String> res = new HashSet<>();
+    helper(res, a, 0, a.length() - 1);
+    return res;
   }
 
-  public static void main(String[] args) {
-    System.out.println(LPS("agbdba"));
+  public static void helper(Set<String> res, String a, int l, int r){
+    if(l== r) {
+      res.add(a);
+    }
+    else {
+      for(int i = l; i <= r; i++){
+        a = swap(a, i, l);
+        helper(res, a, l + 1, r);
+        a = swap(a, i, l);
+      }
+    }
+  }
+
+  public static String swap(String a, int i, int j) {
+    char[] x = a.toCharArray();
+    char b = x[i];
+    x[i] = x[j];
+    x[j] = b;
+    return String.valueOf(x);
+  }
+
+  public static void main(String[] args){
+    System.out.println(permute("AABC"));
   }
 }
