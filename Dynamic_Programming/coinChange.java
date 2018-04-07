@@ -16,8 +16,6 @@ import java.util.Arrays;
 class coinChange {
   public static int coins(int[] coins, int n) {
     int[] table = new int[n + 1];
-    int m = coins.length;
-
     table[0] = 1;
 
     for (int coin : coins) {
@@ -31,6 +29,5 @@ class coinChange {
 
   public static void main(String[] args) {
     System.out.println(coins(new int[] { 1, 2, 3 }, 4));
-    System.out.println(coin(new int[] { 1, 2, 3 }, 4));
   }
 }
