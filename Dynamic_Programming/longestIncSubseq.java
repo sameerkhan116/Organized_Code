@@ -1,33 +1,24 @@
+import java.util.Arrays;
+
 /* 
   Time complexity: O(n*n)
 */
 class longestIncSubseq {
-  public static int max(int[] nums) {
-    int max = 0, n = nums.length;
-    int[] arr = new int[n];
-
-    for (int i = 0; i < n; i++) {
-      arr[i] = 1;
-    }
-
-    for (int i = 1; i < n; i++) {
+  public static int maximum(int[] nums) {
+    int max = 0;
+    int[] dp = new int[nums.length];
+    Arrays.fill(dp, 1);
+    for (int i = 1; i < nums.length; i++) {
       for (int j = 0; j < i; j++) {
-        System.out.println(nums[i] + " " + nums[j] + " " + arr[i] + " " + arr[j]);
-        if (nums[i] > nums[j] && arr[i] < arr[j] + 1) {
-          arr[i] = arr[j] + 1;
-        }
+        if (nums[i] > nums[j] && dp[i] < dp[j] + 1)
+          dp[i] = dp[j] + 1;
+        max = Math.max(max, dp[i]);
       }
     }
-
-    for (int x : arr) {
-      if (x > max)
-        max = x;
-    }
-
     return max;
   }
 
   public static void main(String[] argss) {
-    System.out.println(max(new int[] { 10, 22, 9, 33, 21, 50, 41, 60, 80 }));
+    System.out.println(maximum(new int[] { 10, 22, 9, 33, 21, 50, 41, 60, 80 }));
   }
 }

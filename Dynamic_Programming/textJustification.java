@@ -1,19 +1,19 @@
 import java.util.Arrays;
 
 class textJustification {
-  public static String justify(String[] strs, int width) {
-    int n = strs.length;
+  public static String justify(String[] words, int L) {
+    int n = words.length;
     int[][] dp = new int[n][n];
 
     for (int i = 0; i < n; i++) {
-      dp[i][i] = width - strs[i].length();
+      dp[i][i] = L - words[i].length();
       for (int j = i + 1; j < n; j++) {
-        dp[i][j] = dp[i][j - 1] - 1 - strs[j].length();
+        dp[i][j] = dp[i][j - 1] - 1 - words[j].length();
       }
     }
 
     for (int i = 0; i < n; i++) {
-      for (int j = i; j < n; j++) {
+      for (int j = 0; j < n; j++) {
         if (dp[i][j] < 0)
           dp[i][j] = Integer.MAX_VALUE;
         else
@@ -21,8 +21,8 @@ class textJustification {
       }
     }
 
-    int minCost[] = new int[n];
-    int result[] = new int[n];
+    int[] minCost = new int[n];
+    int[] result = new int[n];
 
     for (int i = n - 1; i >= 0; i--) {
       minCost[i] = dp[i][n - 1];
@@ -36,19 +36,20 @@ class textJustification {
         }
       }
     }
-    System.out.println(Arrays.toString(result));
 
     int i = 0, j;
-    StringBuilder str = new StringBuilder();
+    StringBuilder sb = new StringBuilder();
+
     do {
       j = result[i];
       for (int k = i; k < j; k++) {
-        str.append(strs[k] + " ");
+        sb.append(words[k] + " ");
       }
-      str.append("\n");
+      sb.append("\n");
       i = j;
     } while (j < n);
-    return str.toString();
+
+    return sb.toString().trim();
   }
 
   public static void main(String[] args) {

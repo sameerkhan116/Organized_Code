@@ -1,5 +1,9 @@
 import java.util.*;
 
+/* 
+  Time complexity: O(rows * cols)
+*/
+
 public class maxSizeRect {
   public static int maxSize(int[][] arr) {
     int[] temp = new int[arr[0].length];
@@ -11,33 +15,33 @@ public class maxSizeRect {
         else
           temp[j] += arr[i][j];
       }
-      maxArea = Math.max(maxArea, maxArea(temp));
+      maxArea = Math.max(maxArea, max(temp));
     }
     return maxArea;
   }
 
-  public static int maxArea(int[] nums) {
+  public static int max(int[] arr) {
     Stack<Integer> st = new Stack<>();
     int maxArea = 0, i;
-
-    for (i = 0; i < nums.length;) {
-      if (st.isEmpty() || nums[i] >= nums[st.peek()]) {
+    for (i = 0; i < arr.length;) {
+      if (st.isEmpty() || arr[i] > arr[st.peek()])
         st.push(i++);
-      } else {
+      else {
         int top = st.pop();
-        if (st.isEmpty())
-          maxArea = Math.max(maxArea, nums[top] * i);
-        else
-          maxArea = Math.max(maxArea, nums[top] * (i - st.peek() - 1));
+        if (st.isEmpty()) {
+          maxArea = Math.max(maxArea, arr[top] * i);
+        } else {
+          maxArea = Math.max(maxArea, arr[top] * (i - st.peek() - 1));
+        }
       }
     }
-
     while (!st.isEmpty()) {
       int top = st.pop();
-      if (st.isEmpty())
-        maxArea = Math.max(maxArea, nums[top] * i);
-      else
-        maxArea = Math.max(maxArea, nums[top] * (i - st.peek() - 1));
+      if (st.isEmpty()) {
+        maxArea = Math.max(maxArea, arr[top] * i);
+      } else {
+        maxArea = Math.max(maxArea, arr[top] * (i - st.peek() - 1));
+      }
     }
     return maxArea;
   }

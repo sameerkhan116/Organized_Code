@@ -23,8 +23,6 @@ class WildCard {
           dp[i][j] = dp[i - 1][j - 1];
         else if (b.charAt(j - 1) == '*')
           dp[i][j] = dp[i - 1][j] || dp[i][j - 1];
-        else
-          dp[i][j] = false;
       }
     }
     return dp[m][n];

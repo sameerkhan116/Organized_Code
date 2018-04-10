@@ -5,21 +5,18 @@ import java.util.Arrays;
 */
 
 class reachScore {
-  public static int reach(int[] nums, int tot) {
-    if (nums == null || nums.length == 0 || tot == 0)
-      return 0;
-    int[] table = new int[tot + 1];
-    table[0] = 1;
-    for (int i = 0; i < nums.length; i++) {
-      for (int j = nums[i]; j <= tot; j++) {
-        table[j] += table[j - nums[i]];
+  public static int reachScore(int[] points, int score) {
+    int[] dp = new int[score + 1];
+    dp[0] = 1;
+    for (int point : points) {
+      for (int j = point; j <= score; j++) {
+        dp[j] += dp[j - point];
       }
     }
-    System.out.println(Arrays.toString(table));
-    return table[tot];
+    return dp[score];
   }
 
   public static void main(String[] args) {
-    System.out.println(reach(new int[] { 3, 5, 10 }, 13));
+    System.out.println(reachScore(new int[] { 3, 5, 10 }, 13));
   }
 }

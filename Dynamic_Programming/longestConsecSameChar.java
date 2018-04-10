@@ -5,7 +5,7 @@
 class longestConsecSameChar {
   public static int max(String a) {
     char maxChar = a.charAt(0), prevChar = a.charAt(0);
-    int maxCount = 0, count = 1;
+    int maxCount = 0, count = 0;
     for (char c : a.toCharArray()) {
       if (prevChar == c)
         count++;
